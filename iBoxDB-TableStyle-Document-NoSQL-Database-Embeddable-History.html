@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="keywords" content="iBoxDB,NoSQL,Android,Xamarin,Unity3D,Java,Database,Embeddable,Serverless,DB,ORM,Mono,ACID,MVCC,C#,Nashorn,.NET,Download">
+    <meta name="description" content="iBoxDB Fast ACID Lightweight Embeddable NoSQL Document Database Server for JAVA C# Android Unity3D .NET Mono Xamarin Nashorn Linux Windows Phone">
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="bookmark" href="favicon.ico" />
+
+    <title>iBoxDB Embedded NoSQL Document Database for JAVA C# Android Unity Xamarin Mono</title>
+
+
+    <style type="text/css">
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /*******************************************************************************
+        Theme Styles
+        *******************************************************************************/
+
+        body {
+            box-sizing: border-box;
+            color: #373737;
+            background: #212121;
+            font-size: 16px;
+            font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 10px 0;
+            font-weight: 700;
+            color: #222222;
+            font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+            letter-spacing: -1px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        h2 {
+            padding-bottom: 10px;
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 21px;
+        }
+
+        h5 {
+            font-size: 18px;
+        }
+
+        h6 {
+            font-size: 16px;
+        }
+
+        p {
+            margin: 10px 0 15px 0;
+        }
+
+        footer p {
+            color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007edf;
+            text-shadow: none;
+            transition: color 0.5s ease;
+            transition: text-shadow 0.5s ease;
+            -webkit-transition: color 0.5s ease;
+            -webkit-transition: text-shadow 0.5s ease;
+            -moz-transition: color 0.5s ease;
+            -moz-transition: text-shadow 0.5s ease;
+            -o-transition: color 0.5s ease;
+            -o-transition: text-shadow 0.5s ease;
+        }
+
+            a:hover, a:focus {
+                text-decoration: underline;
+            }
+
+
+        footer a {
+            color: #F2F2F2;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        img {
+            position: relative;
+            margin: 0 auto;
+            max-width: 739px;
+            padding: 5px;
+            margin: 10px 0 10px 0;
+            border: 1px solid #ebebeb;
+            box-shadow: 0 0 5px #ebebeb;
+            -webkit-box-shadow: 0 0 5px #ebebeb;
+            -moz-box-shadow: 0 0 5px #ebebeb;
+        }
+
+        p img {
+            display: inline;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+            text-align: center;
+            border: none;
+        }
+
+        pre, code {
+            width: 100%;
+            color: #222;
+            background-color: #fff;
+            font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+            font-size: 14px;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+        }
+
+        pre {
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            overflow: auto;
+        }
+
+        code {
+            padding: 3px;
+            margin: 0 3px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+        }
+
+        pre code {
+            display: block;
+            box-shadow: none;
+        }
+
+        blockquote {
+            color: #666;
+            margin-bottom: 20px;
+            padding: 0 0 0 20px;
+            border-left: 3px solid #bbb;
+        }
+
+
+        ul, ol, dl {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: inside;
+            padding-left: 20px;
+        }
+
+        ol {
+            list-style: decimal inside;
+            padding-left: 20px;
+        }
+
+        dl dt {
+            font-weight: bold;
+        }
+
+        dl dd {
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        dl p {
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        hr {
+            height: 1px;
+            margin-bottom: 5px;
+            border: none;
+        }
+
+        table {
+            border: 1px solid #373737;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        th {
+            font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding: 10px;
+            background: #373737;
+            color: #fff;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #373737;
+        }
+
+        form {
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        /*******************************************************************************
+        Full-Width Styles
+        *******************************************************************************/
+
+        .outer {
+            width: 100%;
+        }
+
+        .inner {
+            position: relative;
+            max-width: 640px;
+            padding: 20px 10px;
+            margin: 0 auto;
+        }
+
+
+        #header_wrap {
+            background: #212121;
+            background: -moz-linear-gradient(top, #373737, #212121);
+            background: -webkit-linear-gradient(top, #373737, #212121);
+            background: -o-linear-gradient(top, #373737, #212121);
+            background: linear-gradient(top, #373737, #212121);
+        }
+
+            #header_wrap .inner {
+                padding: 50px 10px 30px 10px;
+            }
+
+        #project_title {
+            margin: 0;
+            color: #fff;
+            font-size: 42px;
+            font-weight: 700;
+            text-shadow: #111 0px 0px 10px;
+        }
+
+        #project_tagline {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 300;
+            background: none;
+            text-shadow: #111 0px 0px 10px;
+        }
+
+        #downloads {
+            position: absolute;
+            width: 200px;
+            z-index: 10;
+            bottom: -50px;
+            right: 0;
+            height: 100px;
+            background-image: url( "images/ico.png");
+        }
+
+
+
+        #main_content_wrap {
+            background: #f2f2f2;
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+        }
+
+        #main_content {
+            padding-top: 40px;
+        }
+
+        #footer_wrap {
+            background: #212121;
+        }
+
+        .dlversion {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer" style="border-bottom-style: solid; border-bottom-width: medium; border-bottom-color: #CC3300;">
+        <header class="inner">
+
+            <h1 id="project_title">iBoxDB <span style="display: inline-block; width: 1px; height: 1px; overflow: hidden">Embeddable Object Document NoSQL Database Storage Engines </span><span style="font-size: large">Download</span></h1>
+
+            <h2 id="project_tagline">Fast ACID Table Style Document NoSQL Application Database</h2>
+
+            <div id="downloads">
+                <a href="#nosql_download"
+                    style="border: 1px solid #FFFFFF; padding: 5px 28px 5px 28px; top: 103px; position: relative; font-size: x-large; background-color: #333333; color: #FFFFFF; font-weight: lighter;">DOWNLOAD</a>
+            </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner">
+            <!-- key words -->
+            <div style="width: 1px; height: 1px; overflow: hidden">
+                1. iBoxDB DB Windows Linux OS X Windows Phone Android iPhone Java NET Mono ASP NET JSP WEB HTML5 JavaScript CSharp Embedded Database Document Database
+                2. Smart Small Embeddable X86 ARM Unity Xamarin Unity3D ORM Professional Transactional Thread Safe Multi-Threaded Mobile Database Fast
+
+                3. FREE C# MVCC ACID NoSQL Embedded Document Database Engine Comparison Unity dotNET ACID NoSQL Document Database SQL Agile Development Update Increment
+                4. FREE Java MVCC ACID NoSQL Embedded Document Database Engine C# Java Table-Style Database NoSQL Database Application Database Object Database
+                5. iBoxDB Android Windows Phone Xamarin Unity3D Linux ACID Transaction NoSQL Database NET Java JavaScript Mono Nashorn jjs Embedded Document Application Database
+
+                6. SQL Agile Development Update Increment Selecting Tracer Nashorn ACID CRUD Transaction NoSQL Key-Value Graph Lightweight Serverless Server-Free Schema-Less Serverless Embeddable
+
+                7. C# Java Embeddable NoSQL Database Best Key-Value and Key-Only Document Database
+                8. Simple NoSQL Database Embedded NoSQL DB Java Embedded nosql Document database Simple Embedded nosql database NET Free Fast JSON DB ORM
+                9. ACID NoSQL Data Storage solution nosql Document Versioning NoSQL Isolation Fast Data of Isolation Lightweight Java Database Framework NET In-Memory NoSQL Mobile JSON Database
+                10. Android Mono Java Database C# Database dotNET Database Document Database Engine C# Java ACID NoSQL embedded object database Java C# Lightweight Object Database NoSQL embedded database for dotNET Java object-oriented embedded database
+
+                11. iBoxDB Android Xamarin Mono Java NET Multipurpose Best Lightweight General Purpose Stable Standalone Self Contained Simple Small C# Fast Embedded Local Transactional Document NoSQL Object Database ACID
+                12. NoSQL Database Document Database Tiny Java Embedded Database nosql storage engines NET C# small fast multithreaded engine and server with memory and disk tables transaction isolation powerful cross platform NoSQL database system SaaS IaaS PaaS Database Services
+                13. embedded NET database engine has zero deployment costs NoSQL embedded database for dotNET Java C# in memory database software for real time and embedded applications best game database
+
+                14. Android NoSQL SQL Lite Lightweight Object Relational Mapping ORM Database Java Database Windows Phone C# dotNET Database Unity IL2CPP ARM64.
+                15. Database small footprint makes it easier and cheaper to store and process. Java Embedded Database DB C# Document Database NoSQL Software Java Database In Memory Database NoSQL Lightweight Java Database Java Embedded Document Database NoSQL Transaction ACID Document Database Asp NET NoSQL
+
+            </div>
+            <h3>Project Description</h3>
+
+            <p>iBoxDB is a fast transactional table style document NoSQL Application Database, easily store, process objects and documents, traditional table with unstructured data, zero configuration, pure JAVA and .NET engines, no dependencies.</p>
+
+            <p>
+                iBoxDB has a well designed interface with great performance and capability for agile development. You can create applications with database services embedded and deploy it on mobiles, desktops, servers,
+                to persist your data from anywhere.
+            </p>
+            <p>
+                Dual Core Application Database
+                <br />
+                For &nbsp; JAVA &nbsp; C# &nbsp; Android &nbsp; Unity3D &nbsp; Xamarin &nbsp; Mono &nbsp; Nashorn &nbsp; Linux &nbsp; Windows Phone
+
+            </p>
+
+
+            <h3>Features</h3>
+
+            <ul>
+                <li>CRUD</li>
+                <li>KeyValue and KeyOnly tables</li>
+                <li>Unique and non-unique indexes</li>
+                <li>Unique and non-unique composite indexes</li>
+                <li>SQL like query language</li>
+                <li>Transactions support</li>
+                <li>Concurrency control, thread safe</li>
+                <li>Memory management</li>
+                <li>Scalable hot MasterSlave and MasterMaster replications</li>
+                <li>On disk and in memory databases supported</li>
+                <li>Automatically create databases</li>
+                <li>Zero configuration, copy and run, purely managed code</li>
+                <li>Dynamic columns</li>
+                <li>Different types with different indexes can be stored in same table</li>
+                <li>Persistence + ORM + Cache + Embeddable, ONE STOP solution</li>
+                <li>ResultSet compatible with LINQ</li>
+                <li>High performance, no dependencies</li>
+                <li>Update Increment</li>
+                <li>Selecting Tracer</li>
+                <li>Snapshot-Serializable Isolation</li>
+                <li>JAVA6+ &nbsp; .NET2+</li>
+            </ul>
+
+
+            <h3 id="nosql_download">Download</h3>
+
+            <span class="dlversion">iBoxDB.NET v2.9.1&nbsp;&nbsp; iBoxDB.JAVA v2.5</span>
+            <br />
+            [<a href="https://sourceforge.net/projects/application-database/files/iBoxDBv2912_25.zip/download" target="_blank">Download</a>]
+            &nbsp;&nbsp;
+            [<a href="https://github.com/iboxdb/hijk/raw/dependencies/kits/iBoxDBv2912_25.zip" target="_blank">Download Mirror</a>]
+
+            <br />
+            Select faster
+           
+            <br />
+            <br />
+
+            <span class="dlversion">iBoxDB.NET v2.9&nbsp;&nbsp; iBoxDB.JAVA v2.5</span>
+            <br />
+            [<a href="https://sourceforge.net/projects/application-database/files/iBoxDBv29_250.zip/download" target="_blank">Download</a>]
+            &nbsp;&nbsp;
+            [<a href="https://github.com/iboxdb/hijk/raw/dependencies/kits/iBoxDBv29_250.zip" target="_blank">Download Mirror</a>]
+
+            <br />
+            new KeyOnly table
+           
+            <br />
+            <br />
+
+            <span class="dlversion">iBoxDB.NET v2.8.1&nbsp;&nbsp; iBoxDB.JAVA v2.3.1</span>
+            <br />
+            [<a href="https://sourceforge.net/projects/application-database/files/iBoxDBv281_231.zip/download" target="_blank">Download</a>]
+            &nbsp;&nbsp;
+            [<a href="https://github.com/iboxdb/hijk/raw/dependencies/kits/iBoxDBv281_231.zip" target="_blank">Download Mirror</a>]
+
+            <br />
+            Indexer Method, Commit Event
+           
+            <br />
+            <br />
+
+
+
+
+            <a href="javascript:void(0)" onclick="javascript:code3.style.display='block'">Unity3D WebGL Save</a>
+            <br />
+            <pre style="display: none" id="code3">
+if (GUI.Button(new Rect(0, 50, Screen.width / 2, 50), &quot;Save&quot;)) { 
+   Application.ExternalEval(&quot;FS.syncfs(false, function (err) {});&quot;); 
+}
+</pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code4.style.display='block'">WebPlayer Save</a>
+            <br />
+            <pre style="display: none" id="code4">
+1. #if UNITY_WEBPLAYER { Remove FileStream codes }
+2. Start()
+    var data = Convert.FromBase64String(PlayerPrefs.GetString(&quot;DB&quot;,&quot;&quot;)); 
+    server = new DB(data);
+    server.MinConfig().FileIncSize = 1; 
+    ...
+    db = server.Open();
+  
+3. if (GUI.Button(new Rect(0, 50, Screen.width / 2, 50),&quot;Save&quot;)) { 
+    var data = server.GetBuffer(); 
+    PlayerPrefs.SetString(&quot;DB&quot;,Convert.ToBase64String(data)); 
+    PlayerPrefs.Save(); 
+  }
+</pre>
+
+
+            <a href="javascript:void(0)" onclick="javascript:code6.style.display='block'">DNXCore project.json
+            </a>
+            <br />
+            <pre style="display: none" id="code6">
+&quot;dependencies&quot;: { &quot;iBoxDB&quot;: &quot;2.9.1&quot; }, 
+&quot;frameworks&quot;: { 
+  &quot;dnx451&quot;: { 
+    &quot;frameworkAssemblies&quot;: { 
+      &quot;System.Runtime&quot;: &quot;4.0.10.0&quot;, 
+      &quot;System.IO&quot;: &quot;4.0.0.0&quot;, 
+      &quot;System.Threading.Tasks.Parallel&quot;: &quot;4.0.0.0&quot; 
+    } 
+  }, 
+  &quot;dnxcore50&quot;: { 
+    &quot;dependencies&quot;: { 
+      &quot;System.Console&quot;: &quot;4.0.0-*&quot;, 
+      &quot;System.IO.FileSystem&quot;: &quot;4.0.1-*&quot;, 
+      &quot;System.Threading.Thread&quot;: &quot;4.0.0-*&quot;, 
+      &quot;System.Threading.Tasks.Parallel&quot;: &quot;4.0.0-*&quot;, 
+      &quot;System.Reflection.Extensions&quot;: &quot;4.0.1-*&quot; 
+    } 
+  },
+{export DOTNET_REFERENCE_ASSEMBLIES_PATH=&quot;/usr/lib/mono/xbuild-frameworks&quot;}
+  &quot;net45&quot;: { 
+    &quot;frameworkAssemblies&quot;: { 
+      &quot;System.Runtime&quot;: &quot;4.0.0&quot;, 
+      &quot;System.IO&quot;: &quot;4.0.0&quot;
+    } 
+  }, 
+}</pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code8.style.display='block'">Visual Studio + Windows Phone 8 + dnx451 local</a>
+            <br />
+            <pre style="display: none" id="code8">
+(WP+DNX)DLL-&gt;File Properties-&gt;Click [Unblock]-&gt;Add DLL to Project.
+(WP)Project-&gt;Right Click-&gt;Retarget to Windows Phone 8.1 
+Release-&gt;Start Without Debugging
+</pre>
+            <a href="javascript:void(0)" onclick="javascript:code1.style.display='block'">Customize .NET Strong Name</a>
+            <br />
+            <pre style="display: none" id="code1">
+ sn -k kp.snk 
+ ildasm A.dll /out:A.il 
+ rename A.dll A.bak
+ ilasm  A.il  /dll /key=kp.snk</pre>
+            <a href="javascript:void(0)" onclick="javascript:code7.style.display='block'">Java GC option</a>
+            <br />
+            <pre style="display: none" id="code7">
+-XX:+UseConcMarkSweepGC 
+</pre>
+            <a href="javascript:void(0)" onclick="javascript:code9.style.display='block'">The DB life cycle</a>
+            <br />
+            <pre style="display: none" id="code9">
+static DB db; 
+static AutoBox auto; 
+void onApplicationStart() { 
+  db = new DB(1); 
+  db.getConfig().ensureTable(&quot;Table&quot;, Member.class, &quot;ID&quot;); 
+  auto = db.open(); 
+}                 
+void anywhere1() { 
+  auto.insert(&quot;Table&quot;, new Member()); 
+} 
+void anywhere2() { 
+  try (Box box = auto.cube()) { 
+    box.d(&quot;Table&quot;).insert(new Member()); 
+    CommitResult cr = box.commit(); 
+  } 
+}
+void onApplicationClose() { 
+  auto.getDatabase().close(); 
+} 
+</pre>
+            <a href="https://github.com/iboxdb/ftserver" target="_blank">Full Text Search FTS JAVA</a>
+            <br />
+            <a href="https://github.com/iboxdb/ftserver-cs" target="_blank">Full Text Search FTS C#</a>
+            <br />
+            <a href="https://github.com/iboxdb/hijk" target="_blank">Nashorn JavaScript</a>
+            <br />
+            <a href="https://github.com/iboxdb/forjava/tree/master/demos" target="_blank">Key Only Example JAVA</a>
+            <br />
+            <a href="https://github.com/iboxdb/forjava/wiki/Use-multi-thread-to-increase-speed-and-use-CommitEvent-to-decrease-conflict#ss-transaction" target="_blank">Snapshot and Serializable Isolations in one Transaction</a>
+            <br />
+            <br />
+
+            <h5>License</h5>
+            FreeSoftware Redistributable
+                <br />
+            The software is licensed &quot;as-is.&quot; You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+            
+        </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer" style="border-top-style: solid; border-top-width: medium; border-top-color: #CC3300">
+        <footer class="inner">
+            <p class="copyright">
+                Dual Core Application Database Express
+                <br />
+                For &nbsp; JAVA &nbsp; C# &nbsp; Android &nbsp; Unity3D &nbsp; Xamarin &nbsp; Mono &nbsp; Nashorn &nbsp; Linux &nbsp; Windows Phone
+                <br />
+                NoSQL Storage Engines &nbsp; <a href="/" style="color: #FFFFFF; text-decoration: underline;">www.iBoxDB.com</a>
+            </p>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
