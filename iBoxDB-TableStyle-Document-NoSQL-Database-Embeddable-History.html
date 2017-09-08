@@ -12,319 +12,8 @@
     <title>iBoxDB Embedded NoSQL Document Database for JAVA C# Android Unity Xamarin Mono</title>
 
 
-    <style type="text/css">
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, embed,
-        figure, figcaption, footer, header, hgroup,
-        menu, nav, output, ruby, section, summary,
-        time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font: inherit;
-            vertical-align: baseline;
-        }
-
-        /* HTML5 display-role reset for older browsers */
-        article, aside, details, figcaption, figure,
-        footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-
-        ol, ul {
-            list-style: none;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-
-        /*******************************************************************************
-        Theme Styles
-        *******************************************************************************/
-
-        body {
-            box-sizing: border-box;
-            color: #373737;
-            background: #212121;
-            font-size: 16px;
-            font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            margin: 10px 0;
-            font-weight: 700;
-            color: #222222;
-            font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
-            letter-spacing: -1px;
-        }
-
-        h1 {
-            font-size: 36px;
-            font-weight: 700;
-        }
-
-        h2 {
-            padding-bottom: 10px;
-            font-size: 32px;
-        }
-
-        h3 {
-            font-size: 24px;
-        }
-
-        h4 {
-            font-size: 21px;
-        }
-
-        h5 {
-            font-size: 18px;
-        }
-
-        h6 {
-            font-size: 16px;
-        }
-
-        p {
-            margin: 10px 0 15px 0;
-        }
-
-        footer p {
-            color: #f2f2f2;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007edf;
-            text-shadow: none;
-            transition: color 0.5s ease;
-            transition: text-shadow 0.5s ease;
-            -webkit-transition: color 0.5s ease;
-            -webkit-transition: text-shadow 0.5s ease;
-            -moz-transition: color 0.5s ease;
-            -moz-transition: text-shadow 0.5s ease;
-            -o-transition: color 0.5s ease;
-            -o-transition: text-shadow 0.5s ease;
-        }
-
-            a:hover, a:focus {
-                text-decoration: underline;
-            }
-
-
-        footer a {
-            color: #F2F2F2;
-        }
-
-        em {
-            font-style: italic;
-        }
-
-        strong {
-            font-weight: bold;
-        }
-
-        img {
-            position: relative;
-            margin: 0 auto;
-            max-width: 739px;
-            padding: 5px;
-            margin: 10px 0 10px 0;
-            border: 1px solid #ebebeb;
-            box-shadow: 0 0 5px #ebebeb;
-            -webkit-box-shadow: 0 0 5px #ebebeb;
-            -moz-box-shadow: 0 0 5px #ebebeb;
-        }
-
-        p img {
-            display: inline;
-            margin: 0;
-            padding: 0;
-            vertical-align: middle;
-            text-align: center;
-            border: none;
-        }
-
-        pre, code {
-            width: 100%;
-            color: #222;
-            background-color: #fff;
-            font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-            font-size: 14px;
-            border-radius: 2px;
-            -moz-border-radius: 2px;
-            -webkit-border-radius: 2px;
-        }
-
-        pre {
-            width: 100%;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,.1);
-            overflow: auto;
-        }
-
-        code {
-            padding: 3px;
-            margin: 0 3px;
-            box-shadow: 0 0 10px rgba(0,0,0,.1);
-        }
-
-        pre code {
-            display: block;
-            box-shadow: none;
-        }
-
-        blockquote {
-            color: #666;
-            margin-bottom: 20px;
-            padding: 0 0 0 20px;
-            border-left: 3px solid #bbb;
-        }
-
-
-        ul, ol, dl {
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style: inside;
-            padding-left: 20px;
-        }
-
-        ol {
-            list-style: decimal inside;
-            padding-left: 20px;
-        }
-
-        dl dt {
-            font-weight: bold;
-        }
-
-        dl dd {
-            padding-left: 20px;
-            font-style: italic;
-        }
-
-        dl p {
-            padding-left: 20px;
-            font-style: italic;
-        }
-
-        hr {
-            height: 1px;
-            margin-bottom: 5px;
-            border: none;
-        }
-
-        table {
-            border: 1px solid #373737;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        th {
-            font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            padding: 10px;
-            background: #373737;
-            color: #fff;
-        }
-
-        td {
-            padding: 10px;
-            border: 1px solid #373737;
-        }
-
-        form {
-            background: #f2f2f2;
-            padding: 20px;
-        }
-
-        /*******************************************************************************
-        Full-Width Styles
-        *******************************************************************************/
-
-        .outer {
-            width: 100%;
-        }
-
-        .inner {
-            position: relative;
-            max-width: 640px;
-            padding: 20px 10px;
-            margin: 0 auto;
-        }
-
-
-        #header_wrap {
-            background: #212121;
-            background: -moz-linear-gradient(top, #373737, #212121);
-            background: -webkit-linear-gradient(top, #373737, #212121);
-            background: -o-linear-gradient(top, #373737, #212121);
-            background: linear-gradient(top, #373737, #212121);
-        }
-
-            #header_wrap .inner {
-                padding: 50px 10px 30px 10px;
-            }
-
-        #project_title {
-            margin: 0;
-            color: #fff;
-            font-size: 42px;
-            font-weight: 700;
-            text-shadow: #111 0px 0px 10px;
-        }
-
-        #project_tagline {
-            color: #fff;
-            font-size: 24px;
-            font-weight: 300;
-            background: none;
-            text-shadow: #111 0px 0px 10px;
-        }
-
-        #downloads {
-            position: absolute;
-            width: 200px;
-            z-index: 10;
-            bottom: -50px;
-            right: 0;
-            height: 100px;
-            background-image: url( "images/ico.png");
-        }
-
-
-
-        #main_content_wrap {
-            background: #f2f2f2;
-            border-top: 1px solid #111;
-            border-bottom: 1px solid #111;
-        }
-
-        #main_content {
-            padding-top: 40px;
-        }
-
-        #footer_wrap {
-            background: #212121;
-        }
-
-        .dlversion {
-            font-size: 20px;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="history.css">
+    <link rel="stylesheet" href="highlight/styles/vs.css">
 </head>
 
 <body>
@@ -416,11 +105,11 @@
 
             <h3 id="nosql_download">Download</h3>
 
-            <span class="dlversion">iBoxDB.NET v2.12&nbsp;&nbsp; iBoxDB.JAVA v2.7</span>
+            <span class="dlversion">iBoxDB.NET v2.15&nbsp;&nbsp; iBoxDB.JAVA v2.7</span>
             <br />
-            [<a href="https://sourceforge.net/projects/application-database/files/iBoxDBv21200_27.zip/download" target="_blank">Download</a>]
+            [<a href="https://sourceforge.net/projects/application-database/files/iBoxDBv21500_27.zip/download" target="_blank">Download</a>]
             &nbsp;&nbsp;
-            [<a href="https://github.com/iboxdb/hijk/raw/dependencies/kits/iBoxDBv21200_27.zip" target="_blank">Download Mirror</a>]
+            [<a href="https://github.com/iboxdb/hijk/raw/dependencies/kits/iBoxDBv21500_27.zip" target="_blank">Download Mirror</a>]
 
             <br />
             Adjust Code
@@ -453,86 +142,40 @@
             <br />
 
 
-
-
-            <a href="javascript:void(0)" onclick="javascript:code3.style.display='block'">Unity3D WebGL Save</a>
+            <a href="javascript:void(0)" onclick="javascript:code9.style.display='block'">The DB Life Cycle</a>
             <br />
-            <pre style="display: none" id="code3">
-if (GUI.Button(new Rect(0, 50, Screen.width / 2, 50), &quot;Save&quot;)) { 
-   Application.ExternalEval(&quot;FS.syncfs(false, function (err) {});&quot;); 
-}
-</pre>
+            <pre style="display: none" id="code9"><code class="java">import iBoxDB.LocalServer.*;
 
-            <a href="javascript:void(0)" onclick="javascript:code4.style.display='block'">WebPlayer Save</a>
-            <br />
-            <pre style="display: none" id="code4">
-1. #if UNITY_WEBPLAYER { Remove FileStream codes }
-2. Start()
-    var data = Convert.FromBase64String(PlayerPrefs.GetString(&quot;DB&quot;,&quot;&quot;)); 
-    server = new DB(data);
-    server.MinConfig().FileIncSize = 1; 
-    ...
-    db = server.Open();
-  
-3. if (GUI.Button(new Rect(0, 50, Screen.width / 2, 50),&quot;Save&quot;)) { 
-    var data = server.GetBuffer(); 
-    PlayerPrefs.SetString(&quot;DB&quot;,Convert.ToBase64String(data)); 
-    PlayerPrefs.Save(); 
-  }
-</pre>
-
-
-            <a href="javascript:void(0)" onclick="javascript:code6.style.display='block'">NETCoreAPP
-            </a>
-            <br />
-            <pre style="display: none" id="code6">
-&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
-  &lt;PropertyGroup&gt;
-    &lt;OutputType>Exe&lt;/OutputType&gt;
-    &lt;TargetFramework&gt;netcoreapp2.0&lt;/TargetFramework&gt;
-  &lt;/PropertyGroup&gt;
-  &lt;ItemGroup&gt;
-    &lt;PackageReference Include=&quot;iBoxDB&quot; Version=&quot;2.12&quot; /&gt;
-  &lt;/ItemGroup&gt;
-&lt;/Project&gt;
-            </pre>
-
-
-            <a href="javascript:void(0)" onclick="javascript:code1.style.display='block'">Customize .NET Strong Name</a>
-            <br />
-            <pre style="display: none" id="code1">
- sn -k kp.snk 
- ildasm A.dll /out:A.il 
- rename A.dll A.bak
- ilasm  A.il  /dll /key=kp.snk</pre>
-            <a href="javascript:void(0)" onclick="javascript:code7.style.display='block'">Java GC option</a>
-            <br />
-            <pre style="display: none" id="code7">
--XX:+UseConcMarkSweepGC 
-</pre>
-            <a href="javascript:void(0)" onclick="javascript:code9.style.display='block'">The DB life cycle</a>
-            <br />
-            <pre style="display: none" id="code9">
 static DB db; 
 static AutoBox auto; 
-void onApplicationStart() { 
+synchronized static void onApplicationStart() { 
   db = new DB(1); 
-  db.getConfig().ensureTable(&quot;Table&quot;, Member.class, &quot;ID&quot;); 
-  db.getConfig().ensureIndex(&quot;Table&quot;, Member.class, &quot;Name&quot;);
+  db.getConfig().ensureTable(&quot;Table&quot;, Member.class, &quot;ID&quot;) 
+                .ensureIndex(&quot;Table&quot;, Member.class, &quot;Name&quot;); 
+  //Tree-&gt;Parts 
+  db.getConfig().ensureTable(&quot;Node&quot;, Node.class, &quot;ID&quot;) 
+                .ensureIndex(&quot;Node&quot;, Node.class, &quot;Parent&quot;); 
+
+  db.getConfig().ensureTable(&quot;Part&quot;, Part.class, &quot;ID&quot;) 
+                .ensureIndex(&quot;Part&quot;, Part.class, &quot;Node&quot;);
   auto = db.open(); 
-}                 
+}        
+                         
 void anywhere1() { 
   auto.insert(&quot;Table&quot;, new Member()); 
 } 
+
 void anywhere2() { 
   try (Box box = auto.cube()) { 
     box.d(&quot;Table&quot;).insert(new Member()); 
     CommitResult cr = box.commit(); 
   } 
 } 
+
 boolean exists(Box box) { 
   return box.selectCount(&quot;from Table limit 0,1&quot;) &gt; 0; 
 } 
+
 &lt;V&gt; Iterable&lt;V&gt; startsWith(Box box, Class&lt;V&gt; vClass, String prefix) { 
   String begin = prefix; 
   char[] cs = prefix.toCharArray(); 
@@ -540,10 +183,154 @@ boolean exists(Box box) {
   String end = new String(cs); 
   return box.select(vClass,&quot;from Table where Name&gt;=? &amp; Name&lt;?&quot;,begin,end); 
 }
-void onApplicationClose() { 
+
+void treeJoin(Box box, long nodeRoot, int maxLevel, StringBuilder result) { 
+  if (maxLevel &gt; 5) { return; } 
+  char[] cs = new char[maxLevel * 2]; Arrays.fill(cs, &#39; &#39;); 
+  for (Node node : box.select(Node.class, &quot;from Node where Parent==?&quot;, nodeRoot)) { 
+    result.append(cs).append(&quot;NODE:&quot;)
+          .append(&quot;-&gt;&quot;).append(node.ID).append(&quot;\r\n&quot;); 
+    for (Part part : box.select(Part.class, &quot;from Part where Node==?&quot;, node.ID)) { 
+      result.append(cs).append(&quot; PART:&quot;)
+            .append(&quot;-&gt;&quot;).append(part.ID).append(&quot;\r\n&quot;); 
+    } 
+    treeJoin(box, node.ID, maxLevel + 1, result); 
+  } 
+}
+
+synchronized static void onApplicationClose() { 
   auto.getDatabase().close(); 
 } 
+</code></pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code10.style.display='block'">Use DatabaseServer to Manage Configs</a>
+            <br />
+            <pre style="display: none" id="code10"><code class="cs">using iBoxDB.LocalServer;
+using iBoxDB.LocalServer.IO;
+
+public class ApplicationServer : LocalDatabaseServer 
+{ 
+  public static ApplicationServer App = new ApplicationServer(); 
+  public static IDatabase DB(long address) 
+  { 
+    return App.GetInstance(address); 
+  }
+
+  abstract class Config : BoxFileStreamConfig 
+  { 
+    public Config() : base() 
+    { 
+      CacheLength = MB(512); 
+      FileIncSize = (int)MB(4); 
+      ReadStreamCount = 8; 
+    } 
+  } 
+                
+  class MainConfig : Config 
+  { 
+    public MainConfig() : base() 
+    { 
+      EnsureTable&lt;Member&gt;(&quot;Member&quot;, &quot;ID&quot;); 
+      EnsureIndex&lt;Member&gt;(&quot;Member&quot;, &quot;Name(20)&quot;);
+      EnsureTable&lt;Product&gt;(&quot;Product&quot;, &quot;Type&quot;, &quot;UID&quot;); 
+    }
+  }
+  
+  class InventoryConfig : Config 
+  { 
+    public InventoryConfig() : base() 
+    { 
+      EnsureTable&lt;Item&gt;(&quot;Item&quot;, &quot;ID&quot;); 
+    } 
+  } 
+                
+  protected override DatabaseConfig BuildDatabaseConfig(long address) 
+  { 
+    switch (address) 
+    { 
+      case 1L: return new MainConfig(); 
+      case 2L: return new InventoryConfig(); 
+      default: return null; 
+    } 
+  } 
+} 
+                
+void Anywhere1() 
+{ 
+  var auto = ApplicationServer.DB(1L).Get(); 
+  auto.Insert(&quot;Member&quot;, new Member()); 
+} 
+                
+void Anywhere2() 
+{ 
+  var db = ApplicationServer.DB(2L); 
+  using (var box = db.Cube()) 
+  { 
+    box[&quot;Item&quot;].Insert(new Item()); 
+    CommitResult cr = box.Commit(); 
+  } 
+}
+
+void OnApplicationClose() 
+{ 
+  ApplicationServer.App.Dispose(); 
+}</code></pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code6.style.display='block'">.NET Core APP
+            </a>
+            <br />
+            <pre style="display: none" id="code6"><code class="xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;OutputType>Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;netcoreapp2.0&lt;/TargetFramework&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;iBoxDB&quot; Version=&quot;2.15&quot; /&gt;
+  &lt;/ItemGroup&gt;
+&lt;/Project&gt;</code></pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code4.style.display='block'">WebPlayer Save</a>
+            <br />
+            <pre style="display: none" id="code4"><code class="cs">1. #if UNITY_WEBPLAYER { Remove FileStream codes }
+2. Start()
+    byte[] data = Convert.FromBase64String(PlayerPrefs.GetString(&quot;DB&quot;,&quot;&quot;)); 
+    db = new DB(data);
+    db.MinConfig().FileIncSize = 1; 
+    ...
+    auto = db.Open();
+  
+3. if (GUI.Button(new Rect(0, 50, Screen.width / 2, 50),&quot;Save&quot;)) { 
+    byte[] data = db.GetBuffer(); 
+    PlayerPrefs.SetString(&quot;DB&quot;,Convert.ToBase64String(data)); 
+    PlayerPrefs.Save(); 
+  }
+</code></pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code3.style.display='block'">Unity3D WebGL Save</a>
+            <br />
+            <pre style="display: none" id="code3"><code class="cs">if (GUI.Button(new Rect(0, 50, Screen.width / 2, 50), &quot;Save&quot;)) { 
+   Application.ExternalEval(&quot;FS.syncfs(false, function (err) {});&quot;); 
+}
+</code></pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code11.style.display='block'">Cache Only Config</a>
+            <br />
+            <pre style="display: none" id="code11"><code class="cs">DB db = new DB(DB.CacheOnlyArg);
+</code></pre>
+
+            <a href="javascript:void(0)" onclick="javascript:code1.style.display='block'">Customize .NET Strong Name</a>
+            <br />
+            <pre style="display: none" id="code1"><code class="ss"> sn -k kp.snk 
+ ildasm A.dll /out:A.il 
+ rename A.dll A.bak
+ ilasm  A.il  /dll /key=kp.snk</code></pre>
+            <a href="javascript:void(0)" onclick="javascript:code7.style.display='block'">Java GC option</a>
+            <br />
+            <pre style="display: none" id="code7">
+-XX:+UseConcMarkSweepGC 
 </pre>
+
+
             <a href="https://github.com/iboxdb/ftserver" target="_blank">Full Text Search FTS JAVA</a>
             <br />
             <a href="https://github.com/iboxdb/ftserver-cs" target="_blank">Full Text Search FTS C#</a>
@@ -578,6 +365,7 @@ void onApplicationClose() {
     </div>
 
 
-
+    <script src="highlight/highlight.packS.jS?SRC=USER"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
